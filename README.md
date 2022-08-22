@@ -1,2 +1,2 @@
-# SecureMicroservices
+# SecureMicroservicesProject
 Learn Secure Microservices
