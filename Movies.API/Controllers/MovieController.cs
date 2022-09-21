@@ -10,6 +10,7 @@ namespace Movies.API.Controllers
     [Route(Constant.Movies_Api_Route_Name)]
     [ApiController]
     //[Authorize(Constant.Client_Id_Policy)]
+    [Authorize]
     public class MovieController : ControllerBase
     {
         /// <summary>

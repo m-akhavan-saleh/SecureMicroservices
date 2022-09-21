@@ -8,10 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddIdentityServer() // اضافه کردن به لیست سرویس به همراه انجام تنظیمات لازم
     .AddInMemoryClients(Config.Clients)
-    .AddInMemoryIdentityResources(Config.IdentityResources)
-    .AddInMemoryApiResources(Config.ApiResources)
+    //.AddInMemoryIdentityResources(Config.IdentityResources)
+    //.AddInMemoryApiResources(Config.ApiResources)
     .AddInMemoryApiScopes(Config.ApiScopes)
-    .AddTestUsers(Config.TestUsers)
+    //.AddTestUsers(Config.TestUsers)
     .AddDeveloperSigningCredential();
 
 var app = builder.Build();
