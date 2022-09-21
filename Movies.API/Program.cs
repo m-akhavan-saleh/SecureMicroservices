@@ -32,6 +32,11 @@ builder.Services.AddAuthentication("Bearer")
         };
     });
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ClientIdPloicy", policy => policy.RequireClaim("client_id", "movieClient"));
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
