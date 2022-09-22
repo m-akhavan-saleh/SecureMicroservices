@@ -1,4 +1,4 @@
-﻿using IdentityModel;
+﻿    using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
 using IdentityServer4.Test;
@@ -32,11 +32,11 @@ namespace IdentityServer
                     AllowRememberConsent = false,
                     RedirectUris = new List<string>()
                     {
-                        "https://localhost:5002/signin-oidc" // this is client app port
+                        "https://localhost:7235/signin-oidc" // this is client app port
                     },
                     PostLogoutRedirectUris = new List<string>()
                     {
-                        "https://localhost:5002/signout-callback-oidc"
+                        "https://localhost:7235/signout-callback-oidc"
                     },
                     ClientSecrets = new List<Secret>
                     {
@@ -64,7 +64,7 @@ namespace IdentityServer
                 {
                     SubjectId = "5BE86359-073C-434B-AD2D-A3932222DABE",
                     Username =  "mehmet",
-                    Password = "mehmet",
+                    Password = "swn",
                     Claims = new List<Claim>
                     {
                         new Claim(JwtClaimTypes.GivenName,"mehmet"),
