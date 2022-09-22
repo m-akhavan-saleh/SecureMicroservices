@@ -25,13 +25,21 @@ app.UseAuthorization(); // انجام عملیات احراز هویت
 
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapDefaultControllerRoute(); // آدرس دهی پیش فرض مربوط به کنترلرها
-
-    //endpoints.MapGet("/", async context =>
-    //{
-    //    await context.Response.WriteAsync("Hello World!");
-    //});
+    app.UseEndpoints(endpoints =>
+    {
+        endpoints.MapDefaultControllerRoute();
+    });
 });
+
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapDefaultControllerRoute(); // آدرس دهی پیش فرض مربوط به کنترلرها
+
+//    //endpoints.MapGet("/", async context =>
+//    //{
+//    //    await context.Response.WriteAsync("Hello World!");
+//    //});
+//});
 
 //app.MapGet("/", () => "Hello World!");
 

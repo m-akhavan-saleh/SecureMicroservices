@@ -32,11 +32,11 @@ namespace IdentityServer
                     AllowRememberConsent = false,
                     RedirectUris = new List<string>()
                     {
-                        "https://localhost:7235/signin-oidc" // this is client app port
+                        "https://localhost:7251/signin-oidc" // this is client app port
                     },
                     PostLogoutRedirectUris = new List<string>()
                     {
-                        "https://localhost:7235/signout-callback-oidc"
+                        "https://localhost:7251/signout-callback-oidc"
                     },
                     ClientSecrets = new List<Secret>
                     {
@@ -64,7 +64,7 @@ namespace IdentityServer
                 {
                     SubjectId = "5BE86359-073C-434B-AD2D-A3932222DABE",
                     Username =  "mehmet",
-                    Password = "swn",
+                    Password = "mehmet",
                     Claims = new List<Claim>
                     {
                         new Claim(JwtClaimTypes.GivenName,"mehmet"),
