@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
@@ -25,7 +27,7 @@ namespace Movies.Client.Controllers
             _movieApiService = movieApiService ?? throw new ArgumentNullException(nameof(movieApiService));
         }
 
-        // Get : Token
+        // Get Token
         public async Task LogTokenAndClaims()
         {
             // متد جهت دریافت اطلاعات از طریق توکن
@@ -35,6 +37,13 @@ namespace Movies.Client.Controllers
             {
                 Debug.WriteLine($"Claim type: {claim.Type} - Claim value: {claim.Value}");
             }
+        }
+
+        // Logout
+        public async Task Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await HttpContext.SignOutAsync(OpenIdConnectDefaults.AuthenticationScheme);
         }
 
         // GET: Movies
